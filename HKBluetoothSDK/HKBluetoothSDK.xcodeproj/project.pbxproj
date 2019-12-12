@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F925844623A1D890009CDED6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925844523A1D890009CDED6 /* Helper.swift */; };
+		F930CBEC23A08BE500038A31 /* libHKBluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F930CBE923A08BE500038A31 /* libHKBluetooth.a */; };
+		F930CBEF23A091CE00038A31 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CBEE23A091CE00038A31 /* Extension.swift */; };
+		F930CC0723A0973D00038A31 /* HKAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CC0623A0973D00038A31 /* HKAlert.swift */; };
+		F930CC1C23A09F6E00038A31 /* XJJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CC1B23A09F6D00038A31 /* XJJProgressView.swift */; };
+		F930CC1E23A0CBBB00038A31 /* HKHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CC1D23A0CBBB00038A31 /* HKHTTP.swift */; };
+		F9506442239F8FEE006BC6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506441239F8FEE006BC6ED /* AppDelegate.swift */; };
+		F9506444239F8FEE006BC6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506443239F8FEE006BC6ED /* SceneDelegate.swift */; };
+		F9506446239F8FEE006BC6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506445239F8FEE006BC6ED /* ViewController.swift */; };
+		F9506449239F8FEE006BC6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9506447239F8FEE006BC6ED /* Main.storyboard */; };
+		F950644B239F8FFE006BC6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F950644A239F8FFE006BC6ED /* Assets.xcassets */; };
+		F950644E239F8FFE006BC6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F950644C239F8FFE006BC6ED /* LaunchScreen.storyboard */; };
+		F950645C239F9082006BC6ED /* BLEWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F950645B239F9082006BC6ED /* BLEWorker.swift */; };
+		F9506461239F9A2D006BC6ED /* CardBLEListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506460239F9A2D006BC6ED /* CardBLEListViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F925844523A1D890009CDED6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		F930CBE923A08BE500038A31 /* libHKBluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHKBluetooth.a; sourceTree = "<group>"; };
+		F930CBEA23A08BE500038A31 /* UserRecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordItem.h; sourceTree = "<group>"; };
+		F930CBEB23A08BE500038A31 /* HKBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKBluetooth.h; sourceTree = "<group>"; };
+		F930CBEE23A091CE00038A31 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F930CC0623A0973D00038A31 /* HKAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAlert.swift; sourceTree = "<group>"; };
+		F930CC1B23A09F6D00038A31 /* XJJProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJJProgressView.swift; sourceTree = "<group>"; };
+		F930CC1D23A0CBBB00038A31 /* HKHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKHTTP.swift; sourceTree = "<group>"; };
+		F950643E239F8FEE006BC6ED /* HKBluetoothSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKBluetoothSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9506441239F8FEE006BC6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9506443239F8FEE006BC6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F9506445239F8FEE006BC6ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9506448239F8FEE006BC6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F950644A239F8FFE006BC6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F950644D239F8FFE006BC6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F950644F239F8FFE006BC6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F950645B239F9082006BC6ED /* BLEWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEWorker.swift; sourceTree = "<group>"; };
+		F950645D239F9162006BC6ED /* HKBluetoothSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HKBluetoothSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9506460239F9A2D006BC6ED /* CardBLEListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBLEListViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F950643B239F8FEE006BC6ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F930CBEC23A08BE500038A31 /* libHKBluetooth.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F925844423A1D873009CDED6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F925844523A1D890009CDED6 /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F930CBED23A091B300038A31 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F930CBEE23A091CE00038A31 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F930CBF023A091F700038A31 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				F930CC1D23A0CBBB00038A31 /* HKHTTP.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		F930CC0523A0972B00038A31 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				F930CC0623A0973D00038A31 /* HKAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		F930CC1A23A09F6D00038A31 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				F930CC1B23A09F6D00038A31 /* XJJProgressView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		F9506435239F8FEE006BC6ED = {
+			isa = PBXGroup;
+			children = (
+				F9506440239F8FEE006BC6ED /* HKBluetoothSDK */,
+				F950643F239F8FEE006BC6ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F950643F239F8FEE006BC6ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F950643E239F8FEE006BC6ED /* HKBluetoothSDK.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9506440239F8FEE006BC6ED /* HKBluetoothSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F925844423A1D873009CDED6 /* Helper */,
+				F930CC1A23A09F6D00038A31 /* Progress */,
+				F930CC0523A0972B00038A31 /* Alert */,
+				F930CBF023A091F700038A31 /* HTTP */,
+				F930CBED23A091B300038A31 /* Extension */,
+				F9506455239F9010006BC6ED /* SDK */,
+				F9506441239F8FEE006BC6ED /* AppDelegate.swift */,
+				F9506443239F8FEE006BC6ED /* SceneDelegate.swift */,
+				F9506445239F8FEE006BC6ED /* ViewController.swift */,
+				F9506460239F9A2D006BC6ED /* CardBLEListViewController.swift */,
+				F950645A239F906D006BC6ED /* BLEWorker */,
+				F9506447239F8FEE006BC6ED /* Main.storyboard */,
+				F950644A239F8FFE006BC6ED /* Assets.xcassets */,
+				F950644C239F8FFE006BC6ED /* LaunchScreen.storyboard */,
+				F950644F239F8FFE006BC6ED /* Info.plist */,
+				F950645D239F9162006BC6ED /* HKBluetoothSDK-Bridging-Header.h */,
+			);
+			path = HKBluetoothSDK;
+			sourceTree = "<group>";
+		};
+		F9506455239F9010006BC6ED /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				F930CBEB23A08BE500038A31 /* HKBluetooth.h */,
+				F930CBE923A08BE500038A31 /* libHKBluetooth.a */,
+				F930CBEA23A08BE500038A31 /* UserRecordItem.h */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		F950645A239F906D006BC6ED /* BLEWorker */ = {
+			isa = PBXGroup;
+			children = (
+				F950645B239F9082006BC6ED /* BLEWorker.swift */,
+			);
+			path = BLEWorker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F950643D239F8FEE006BC6ED /* HKBluetoothSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9506452239F8FFE006BC6ED /* Build configuration list for PBXNativeTarget "HKBluetoothSDK" */;
+			buildPhases = (
+				F950643A239F8FEE006BC6ED /* Sources */,
+				F950643B239F8FEE006BC6ED /* Frameworks */,
+				F950643C239F8FEE006BC6ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HKBluetoothSDK;
+			productName = HKBluetoothSDK;
+			productReference = F950643E239F8FEE006BC6ED /* HKBluetoothSDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9506436239F8FEE006BC6ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Shenzhen Blacktek";
+				TargetAttributes = {
+					F950643D239F8FEE006BC6ED = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F9506439239F8FEE006BC6ED /* Build configuration list for PBXProject "HKBluetoothSDK" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9506435239F8FEE006BC6ED;
+			productRefGroup = F950643F239F8FEE006BC6ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F950643D239F8FEE006BC6ED /* HKBluetoothSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F950643C239F8FEE006BC6ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F950644E239F8FFE006BC6ED /* LaunchScreen.storyboard in Resources */,
+				F950644B239F8FFE006BC6ED /* Assets.xcassets in Resources */,
+				F9506449239F8FEE006BC6ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F950643A239F8FEE006BC6ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F930CC1E23A0CBBB00038A31 /* HKHTTP.swift in Sources */,
+				F9506461239F9A2D006BC6ED /* CardBLEListViewController.swift in Sources */,
+				F9506446239F8FEE006BC6ED /* ViewController.swift in Sources */,
+				F9506442239F8FEE006BC6ED /* AppDelegate.swift in Sources */,
+				F930CC0723A0973D00038A31 /* HKAlert.swift in Sources */,
+				F930CBEF23A091CE00038A31 /* Extension.swift in Sources */,
+				F9506444239F8FEE006BC6ED /* SceneDelegate.swift in Sources */,
+				F925844623A1D890009CDED6 /* Helper.swift in Sources */,
+				F950645C239F9082006BC6ED /* BLEWorker.swift in Sources */,
+				F930CC1C23A09F6E00038A31 /* XJJProgressView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9506447239F8FEE006BC6ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9506448239F8FEE006BC6ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F950644C239F8FFE006BC6ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F950644D239F8FFE006BC6ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9506450239F8FFE006BC6ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F9506451239F8FFE006BC6ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9506453239F8FFE006BC6ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3JJ9XG775P;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = HKBluetoothSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HKBluetoothSDK/SDK",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = ewx.HKBluetoothSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Levy/Desktop/Dome/HKBluetoothSDK/HKBluetoothSDK/HKBluetoothSDK-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9506454239F8FFE006BC6ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3JJ9XG775P;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = HKBluetoothSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HKBluetoothSDK/SDK",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = ewx.HKBluetoothSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Levy/Desktop/Dome/HKBluetoothSDK/HKBluetoothSDK/HKBluetoothSDK-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9506439239F8FEE006BC6ED /* Build configuration list for PBXProject "HKBluetoothSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9506450239F8FFE006BC6ED /* Debug */,
+				F9506451239F8FFE006BC6ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9506452239F8FFE006BC6ED /* Build configuration list for PBXNativeTarget "HKBluetoothSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9506453239F8FFE006BC6ED /* Debug */,
+				F9506454239F8FFE006BC6ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9506436239F8FEE006BC6ED /* Project object */;
+}
