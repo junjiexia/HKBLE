@@ -20,7 +20,7 @@ class HKHTTP {
             //return "\(key.utf8Str())=\(valueStr.utf8Str())"
         }).joined(separator: "&")
         
-        let urlString = urlStr + "?" + paramsString
+        let urlString = urlStr + (paramsString.count > 0 ? ("?" + paramsString) : "")
         let url_str = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         guard let url = URL(string: url_str!) else {
@@ -60,9 +60,11 @@ class HKHTTP {
         
         let task = URLSession.shared.downloadTask(with: url) { (url, response, error) in
             if error == nil {
+                let toPath = saveFile(url?.path, fileName)
+                
                 DispatchQueue.main.async {
-                    print("下载完成，路径：\(url?.path ?? "")-to-\(filePath) 名称：\(fileName)")
-                    success?(url?.path)
+                    print("下载完成，路径：\(urlStr)-to-\(url?.path ?? "") 名称：\(fileName)")
+                    success?(toPath)
                 }
             }else {
                 DispatchQueue.main.async {
@@ -73,5 +75,57 @@ class HKHTTP {
         }
         
         task.resume()
+    }
+    
+    class func saveFile(_ path: String?, _ fileName: String) -> String? {
+        guard let _path = path else {return nil}
+        let toPath = NSHomeDirectory() + "/Documents/TempFiles/" + fileName
+        let folderPath = NSHomeDirectory() + "/Documents/TempFiles/"
+        
+        if FileManager.default.fileExists(atPath: toPath) {
+            _ = removeFile(toPath)
+        }
+        
+        guard createFolder(folderPath) else {return nil}
+        
+        do {
+            try FileManager.default.copyItem(atPath: _path, toPath: toPath)
+            return toPath
+        }catch {
+            print("save file error:", error)
+            return nil
+        }
+    }
+    
+    class func removeFile(_ path: String) -> Bool {
+        if FileManager.default.fileExists(atPath: path) {
+            do {
+                try FileManager.default.removeItem(atPath: path)
+                return true
+            }catch {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    class func createFolder(_ path: String) -> Bool {
+        guard !directoryIsExists(path) else {return true}
+        do {
+            try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            return true
+        }catch {
+            print(" 💫 ", "创建文件夹失败！ error: ", error)
+            return false
+        }
+    }
+    
+    // 判断文件夹是否存在
+    class func directoryIsExists(_ path: String) -> Bool {
+        var directoryExists = ObjCBool.init(false)
+        let fileExists = FileManager.default.fileExists(atPath: path, isDirectory: &directoryExists)
+        
+        return fileExists && directoryExists.boolValue
     }
 }

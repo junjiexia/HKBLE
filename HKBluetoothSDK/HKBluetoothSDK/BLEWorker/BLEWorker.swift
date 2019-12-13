@@ -219,25 +219,22 @@ extension BLEWorker: HKBluetoothDelegate {
         
         self.isOtaUpdate = true
         
-        HKHTTP.request("http://192.168.1.199:8080/ezx_syset/apk/checkDeviceVersion", "GET", [:], success: {[weak self] (data) in
-            guard let sself = self else {return}
-            guard let dict = data.JSONToAny() as? [String: Any] else {return}
-            guard let dic = dict["data1"] as? [String: Any] else {return}
-            guard let fileName = dic["filename"] as? String, let path = dic["path"] as? String, let version = dic["version"] as? String else {return}
+        HKHTTP.request("http://szydak.eicp.net:82/ezx_syset/apk/checkDeviceVersion", "GET", [:], success: {[weak self] (data) in
+            guard let sself = self else { return }
+            guard let dict = data.JSONToAny() as? [String: Any] else { sself.isOtaUpdate = false; return }
+            guard let dic = dict["data1"] as? [String: Any] else { sself.isOtaUpdate = false; return }
+            guard let fileName = dic["filename"] as? String, let path = dic["path"] as? String, let version = dic["version"] as? String else { sself.isOtaUpdate = false; return }
             
             let current = sself.version.sub(6, 8)
             
             let now = Int(current) ?? 0
             let new = Int(version) ?? 0
             
-            guard new > 0, new != now else {return}
+            guard new > 0, new != now else { sself.isOtaUpdate = false; return }
             
             HKAlert.show(alert: nil, "卡片升级", "卡片有新版本，是否升级？") {
                 sself.checkDeviceVersionDealwith(version, path, fileName)
             }
-            
-            sself.isOtaUpdate = false
-            
         }) {[weak self] (error) in
             guard let sself = self else {return}
             sself.isOtaUpdate = false
@@ -245,11 +242,11 @@ extension BLEWorker: HKBluetoothDelegate {
     }
     
     private func checkDeviceVersionDealwith(_ version: String, _ path: String, _ fileName: String) { /// 检查硬件版本处理
-        guard self.mac_address.count > 0, self.mac_address.hasPrefix("08:7C") else { self.isOtaUpdate = false; return } /// 确定是卡片Mac地址
+        guard self.mac_address.count > 0, self.linkCard?.bleType == BLE_TYPE_SENSEACQUISITION_CARD else { self.isOtaUpdate = false; return } /// 确定是卡片Mac地址
         guard self.version.count > 7, !self.version.contains(version) else { self.isOtaUpdate = false; return } /// 检查版本号的有效性，及是否是不同版本
         guard self.connectState == BLE_CONNECTED else { self.isOtaUpdate = false; return } /// 确定蓝牙正常连接
         
-        let urlStr = String(format: "http://192.168.1.199:8080/ezx_syset/download?filepath=%@&filename=%@", path, fileName)
+        let urlStr = String(format: "http://www.allsps.com/ezx_syset/download?filepath=%@&filename=%@", path, fileName)
         HKHTTP.download(urlStr, path, fileName, success: {[weak self] (filePath) in
             guard let sself = self else {return}
             if let fpath = filePath {
@@ -295,6 +292,7 @@ extension BLEWorker: HKBluetoothDelegate {
     
     //MARK: - 离线打卡数据
     func bluetoothOfflineDataTotal(_ totalNum: Int) {
+        print("你的蓝牙采集器有\(totalNum)条离线数据")
         HKAlert.show(alert: nil, "提示", "你的蓝牙采集器有\(totalNum)条离线数据未同步") {
             HKBluetooth.sharedInstance().getBleDataOfOffline() // 同步数据
         }
@@ -317,11 +315,19 @@ extension BLEWorker: HKBluetoothDelegate {
         
         if let arr = cardArr as? [UserRecordItem] {
             self.dataList.append(contentsOf: arr)
+            HKBluetooth.sharedInstance().clearCache()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "bluetoothDataListUpdate"), object: nil, userInfo: nil)
         }
     }
     
     func bluetoothBaseStationData(_ dic: [AnyHashable : Any]) {
         print("基站数据：", dic)
+        let macAddress = dic["macAddress"] as? String
+        let eq = dic["power"] as? String
+        let item = UserRecordItem()
+        item.mac = (macAddress ?? "") + "(基站) 电量:" + ((eq != nil) ? "\(eq!)%" : "")
+        item.check_in = Date().timeIntervalSince1970 + 1000
+        self.dataList.append(item)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "bluetoothDataListUpdate"), object: nil, userInfo: nil)
     }
 }

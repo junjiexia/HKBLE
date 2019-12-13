@@ -58,6 +58,14 @@ typedef enum : NSUInteger {
     BLE_UNBINDING, /// -- 5: 解除绑定
 } BLEConnectState;
 
+typedef enum : NSUInteger {
+    BLE_TYPE_UNKOWN = 0, /// -- 未知
+    BLE_TYPE_SENSEACQUISITION_CARD, /// -- 有感采集卡
+    BLE_TYPE_SENSELESSACQUISITION_CARD, /// -- 无感采集卡
+    BLE_TYPE_LTBASESTATION, /// -- 定位标签基站
+    BLE_TYPE_GIBASESTATION /// -- 网关识别基站
+} BLEType;
+
 @class BleParipheralInfo;
 
 @interface BleParipheralInfo : NSObject
@@ -74,7 +82,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSNumber *rssi;
 
 // device's type
-@property (nonatomic, readonly) NSString *blueType;
+@property (nonatomic, readonly) BLEType bleType;
 
 @end
 
@@ -93,13 +101,16 @@ typedef enum : NSUInteger {
 - (void)bluetoothConnectState: (BLEConnectState)state peripheralInfo: (BleParipheralInfo *)info;
 
 /// 获取电池电量
-/// -- 电池电量
+/// -- voltage 电池电量
+/// -- charge 充电标志：0 未充电  1 充电状态
+/// -- date 上一次充电时间
+/// -- isNilDate 上一次充电时间是否为空（swift 代码接入，避免发生为空错误）
 - (void)bluetoothVoltage: (NSUInteger)voltage Charge: (Byte)charge Date: (NSDate *)date NilDate: (BOOL)isNilDate;
 
 /// 获取卡片版本号
 - (void)bluetoothVersion: (NSString *)version;
 
-/// 升级
+/// 升级过程
 - (void)bluetoothUpdateStatus: (OtaUpdateStatus)status progress: (float)progress;
 
 /// 打卡数据获取（在线）
@@ -109,12 +120,15 @@ typedef enum : NSUInteger {
 - (void)bluetoothOfflineDataTotal: (NSInteger)totalNum;
 
 /// 打卡数据获取进程（离线）
+/// -- complateNum 完成数量
+/// -- totalNum 总数
+/// -- begin 是否是起始（方便于做进度提示）
 - (void)bluetoothOfflineDataProcessWithComplate: (NSInteger)complateNum Total: (NSInteger)totalNum Begin: (BOOL)begin;
 
 /// 打卡数据获取（离线）
 - (void)bluetoothOfflineData: (NSArray *)cardArr;
 
-// 基站数据获取
+/// 基站数据获取（扫描时就可获取）
 - (void)bluetoothBaseStationData: (NSDictionary *)dic;
 
 @end
@@ -153,14 +167,14 @@ typedef enum : NSUInteger {
 /// 断开当前蓝牙
 - (void)disconnectWithPeripheral: (CBPeripheral *)peripheral;
 
-/// 绑定
+/// 绑定（建立重连设备）
 - (void)bindWithMacAddress: (NSString *)macAddress;
 
-/// 解除绑定
+/// 解除绑定（清空重连设备）
 - (void)unbindingWithPeripheral: (CBPeripheral *)peripheral;
 - (void)unbinding;
 
-/// 更新重连Mac地址，非APP绑定、解绑使用
+/// 更新重连Mac地址，非APP绑定、解绑（macAddress 传空值）使用
 /// 如果非APP解绑，且正在连接，断开连接
 - (void)updateMac: (NSString *)macAddress;
 
@@ -168,7 +182,7 @@ typedef enum : NSUInteger {
 - (void)getBleDataOfOffline;
 
 /// 清除打卡缓存
-- (void)clearFlash;
+- (void)clearCache;
 
 /// 卡片升级
 /// 需要本地文件的路径
