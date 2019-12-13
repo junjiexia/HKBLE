@@ -13,7 +13,7 @@
 		F930CC1C23A09F6E00038A31 /* XJJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CC1B23A09F6D00038A31 /* XJJProgressView.swift */; };
 		F930CC1E23A0CBBB00038A31 /* HKHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CC1D23A0CBBB00038A31 /* HKHTTP.swift */; };
 		F936502123A32E470024ED9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F936502023A32E470024ED9D /* Main.storyboard */; };
-		F936502D23A3752F0024ED9D /* libHKBluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F936502A23A3752E0024ED9D /* libHKBluetooth.a */; };
+		F936503D23A390330024ED9D /* libHKBluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F936503C23A390330024ED9D /* libHKBluetooth.a */; };
 		F9506442239F8FEE006BC6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506441239F8FEE006BC6ED /* AppDelegate.swift */; };
 		F9506444239F8FEE006BC6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506443239F8FEE006BC6ED /* SceneDelegate.swift */; };
 		F9506446239F8FEE006BC6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506445239F8FEE006BC6ED /* ViewController.swift */; };
@@ -30,9 +30,9 @@
 		F930CC1B23A09F6D00038A31 /* XJJProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJJProgressView.swift; sourceTree = "<group>"; };
 		F930CC1D23A0CBBB00038A31 /* HKHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKHTTP.swift; sourceTree = "<group>"; };
 		F936502023A32E470024ED9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F936502A23A3752E0024ED9D /* libHKBluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHKBluetooth.a; sourceTree = "<group>"; };
-		F936502B23A3752E0024ED9D /* UserRecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordItem.h; sourceTree = "<group>"; };
-		F936502C23A3752F0024ED9D /* HKBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKBluetooth.h; sourceTree = "<group>"; };
+		F936503A23A390330024ED9D /* UserRecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordItem.h; sourceTree = "<group>"; };
+		F936503B23A390330024ED9D /* HKBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKBluetooth.h; sourceTree = "<group>"; };
+		F936503C23A390330024ED9D /* libHKBluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHKBluetooth.a; sourceTree = "<group>"; };
 		F950643E239F8FEE006BC6ED /* HKBluetoothSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKBluetoothSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9506441239F8FEE006BC6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9506443239F8FEE006BC6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F936502D23A3752F0024ED9D /* libHKBluetooth.a in Frameworks */,
+				F936503D23A390330024ED9D /* libHKBluetooth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,9 +139,9 @@
 		F9506455239F9010006BC6ED /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				F936502C23A3752F0024ED9D /* HKBluetooth.h */,
-				F936502A23A3752E0024ED9D /* libHKBluetooth.a */,
-				F936502B23A3752E0024ED9D /* UserRecordItem.h */,
+				F936503B23A390330024ED9D /* HKBluetooth.h */,
+				F936503C23A390330024ED9D /* libHKBluetooth.a */,
+				F936503A23A390330024ED9D /* UserRecordItem.h */,
 			);
 			path = SDK;
 			sourceTree = "<group>";

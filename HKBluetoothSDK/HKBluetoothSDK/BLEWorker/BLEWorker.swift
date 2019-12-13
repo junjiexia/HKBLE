@@ -201,10 +201,12 @@ extension BLEWorker: HKBluetoothDelegate {
             self.cs_text = "蓝牙已连接"
             self.name = info.name
             self.mac_address = info.macAddress
+            self.linkCard = info
         default:
             self.cs_text = isBind ? "蓝牙未连接" : ""
             self.eq_text = ""
             self.version = ""
+            self.linkCard = nil
             
             if !isBind {
                 self.name = ""
