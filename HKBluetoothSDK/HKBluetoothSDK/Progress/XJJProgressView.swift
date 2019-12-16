@@ -58,7 +58,7 @@ class XJJProgressView: UIView {
         didSet {
             guard let p = progress else {return}
             self.progressView.progress = p / 100
-            self.remaidLabel.text = String(format: "%.0f%%", p)
+            self.remaidLabel.text = String(format: "%.2f%%", p)
             
             if p >= 100 {
                 self.complateBlock?()

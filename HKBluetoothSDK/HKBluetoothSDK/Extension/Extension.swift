@@ -88,7 +88,7 @@ extension String { // mac地址转换
             var arr: [String] = []
             
             let j = 2
-            let count = self.count / 2 + (self.count % 2 == 0 ? 0 : 1)
+            let count = self.count / j + (self.count % j == 0 ? 0 : 1)
             for i in 0..<count {
                 let str = self.sub(i * j, j)
                 arr.append(str)
@@ -100,7 +100,7 @@ extension String { // mac地址转换
     }
     
     func sub(_ start: Int, _ count: Int) -> String {
-        guard self.count > start + count else {return ""}
+        guard self.count >= start + count else {return ""}
         let startIndex = self.index(self.startIndex, offsetBy: start)
         let endIndex =  self.index(self.startIndex, offsetBy: start + count)
         return String(self[startIndex..<endIndex])

@@ -167,7 +167,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             let item = self.dataTableData[indexPath.row]
-            cell?.textLabel?.text = item.mac
+            cell?.textLabel?.text = item.mac + ((item.tab_id != nil) ? "(\(item.tab_id.macType()))" : "")
             cell?.detailTextLabel?.text = Date.timeIntervalToDateString(msec: item.check_in, "yyyy-MM-dd HH:mm:ss")
             
             return cell!

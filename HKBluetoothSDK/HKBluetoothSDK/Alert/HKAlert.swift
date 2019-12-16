@@ -13,11 +13,15 @@ class HKAlert {
     class func show(alert viewController: UIViewController?,
                     _ title: String?,
                     _ message: String?,
-                    sureCallback: (() -> Void)?) {
+                    sureCallback: (() -> Void)?,
+                    cancelCallBack: (() -> Void)?) {
         let alert_vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "取消", style: .cancel) { (action) in
+            cancelCallBack?()
+        }
         let ok = UIAlertAction(title: "确定", style: .default) { (action) in
             sureCallback?()
+            alert_vc.dismiss(animated: true, completion: nil)
         }
         
         alert_vc.addAction(cancel)

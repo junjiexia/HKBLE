@@ -217,7 +217,7 @@ extension BLEWorker: HKBluetoothDelegate {
     
     //MARK: - 设备更新及回调
     private func checkDeviceVersion() { /// 检查硬件版本
-        guard !isOtaUpdate else {return}
+        guard !isOtaUpdate, self.linkCard?.bleType == BLE_TYPE_SENSEACQUISITION_CARD else {return} /// 确定是有感卡片
         
         self.isOtaUpdate = true
         
@@ -234,8 +234,10 @@ extension BLEWorker: HKBluetoothDelegate {
             
             guard new > 0, new != now else { sself.isOtaUpdate = false; return }
             
-            HKAlert.show(alert: nil, "卡片升级", "卡片有新版本，是否升级？") {
+            HKAlert.show(alert: nil, "卡片升级", "卡片有新版本，是否升级？", sureCallback: {
                 sself.checkDeviceVersionDealwith(version, path, fileName)
+            }) {
+                sself.isOtaUpdate = false
             }
         }) {[weak self] (error) in
             guard let sself = self else {return}
@@ -244,7 +246,7 @@ extension BLEWorker: HKBluetoothDelegate {
     }
     
     private func checkDeviceVersionDealwith(_ version: String, _ path: String, _ fileName: String) { /// 检查硬件版本处理
-        guard self.mac_address.count > 0, self.linkCard?.bleType == BLE_TYPE_SENSEACQUISITION_CARD else { self.isOtaUpdate = false; return } /// 确定是卡片Mac地址
+        guard self.mac_address.count > 0 else { self.isOtaUpdate = false; return } /// 确定是卡片Mac地址
         guard self.version.count > 7, !self.version.contains(version) else { self.isOtaUpdate = false; return } /// 检查版本号的有效性，及是否是不同版本
         guard self.connectState == BLE_CONNECTED else { self.isOtaUpdate = false; return } /// 确定蓝牙正常连接
         
@@ -272,11 +274,11 @@ extension BLEWorker: HKBluetoothDelegate {
         case OTA_UPDATE_SUCCESS:
             XJJProgress.update(progress)
         case OTA_UPDATE_COMPLETE:
-            self.isOtaUpdate = false;
+            self.isOtaUpdate = false
             XJJProgress.end()
             HKAlert.show(prompt: nil, "提示", "设备升级成功,请等待重新连接")
         default:
-            self.isOtaUpdate = false;
+            self.isOtaUpdate = false
             if XJJProgress.progressView != nil {
                 XJJProgress.end()
                 HKAlert.show(prompt: nil, "提示", "设备升级失败")
@@ -295,8 +297,10 @@ extension BLEWorker: HKBluetoothDelegate {
     //MARK: - 离线打卡数据
     func bluetoothOfflineDataTotal(_ totalNum: Int) {
         print("你的蓝牙采集器有\(totalNum)条离线数据")
-        HKAlert.show(alert: nil, "提示", "你的蓝牙采集器有\(totalNum)条离线数据未同步") {
+        HKAlert.show(alert: nil, "提示", "你的蓝牙采集器有\(totalNum)条离线数据未同步", sureCallback: {
             HKBluetooth.sharedInstance().getBleDataOfOffline() // 同步数据
+        }) {
+            
         }
     }
     
@@ -304,7 +308,7 @@ extension BLEWorker: HKBluetoothDelegate {
         if begin {
             XJJProgress.start("离线打卡数据获取", "开始读取，总共: \(totalNum)", nil)
         }else {
-            XJJProgress.update(Float(complateNum/totalNum))
+            XJJProgress.update(Float(complateNum)/Float(totalNum) * 100)
         }
         
         if complateNum == totalNum {
