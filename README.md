@@ -97,3 +97,6 @@ HKBluetooth 作为一个单利，承担着所有连接、数据获取、数据�
     dic为字典：dic["macAddress"]获取蓝牙Mac地址；dic["power"]获取电池电量
 
         - (void)bluetoothBaseStationData: (NSDictionary *)dic;
+
+
+
