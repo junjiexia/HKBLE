@@ -4,7 +4,7 @@ HK Bluetooth package, used to connect specific Bluetooth devices of HK and obtai
 黑卡科技蓝牙设备连接，数据读取文档
 
 工作环境
-支持 iOS8.0 以上
+支持 iOS9.0 以上版本
 
 导入
 1. 直接导入，下载后把sdk文件夹复制到工程里即可使用
