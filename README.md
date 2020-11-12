@@ -94,7 +94,7 @@ HKBluetooth 作为一个单利，承担着所有连接、数据获取、数据�
         - (void)bluetoothOfflineData: (NSArray *)cardArr; ------ 离线数据接收
 
 8. 基站类型蓝牙数据获取，扫描时获取；
-    dic为字典：dic["macAddress"]获取蓝牙Mac地址；dic["power"]获取电池电量
+    dic为字典：dic["macAddress"]获取蓝牙Mac地址；dic["power"]获取电池电量；dic["RSSI"]获取蓝牙信号强度
 
         - (void)bluetoothBaseStationData: (NSDictionary *)dic;
 
