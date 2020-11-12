@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F915102D23A722DB004399C8 /* libHKBluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F915102C23A722DB004399C8 /* libHKBluetooth.a */; };
 		F925844623A1D890009CDED6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925844523A1D890009CDED6 /* Helper.swift */; };
 		F930CBEF23A091CE00038A31 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CBEE23A091CE00038A31 /* Extension.swift */; };
 		F930CC0723A0973D00038A31 /* HKAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930CC0623A0973D00038A31 /* HKAlert.swift */; };
@@ -21,12 +20,10 @@
 		F950644E239F8FFE006BC6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F950644C239F8FFE006BC6ED /* LaunchScreen.storyboard */; };
 		F950645C239F9082006BC6ED /* BLEWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F950645B239F9082006BC6ED /* BLEWorker.swift */; };
 		F9506461239F9A2D006BC6ED /* CardBLEListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9506460239F9A2D006BC6ED /* CardBLEListViewController.swift */; };
+		F980FF33255D26D700819B5D /* libHKBluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F980FF30255D26D700819B5D /* libHKBluetooth.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F915102A23A722DB004399C8 /* UserRecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordItem.h; sourceTree = "<group>"; };
-		F915102B23A722DB004399C8 /* HKBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKBluetooth.h; sourceTree = "<group>"; };
-		F915102C23A722DB004399C8 /* libHKBluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHKBluetooth.a; sourceTree = "<group>"; };
 		F925844523A1D890009CDED6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F930CBEE23A091CE00038A31 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F930CC0623A0973D00038A31 /* HKAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAlert.swift; sourceTree = "<group>"; };
@@ -43,6 +40,9 @@
 		F950645B239F9082006BC6ED /* BLEWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEWorker.swift; sourceTree = "<group>"; };
 		F950645D239F9162006BC6ED /* HKBluetoothSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HKBluetoothSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9506460239F9A2D006BC6ED /* CardBLEListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBLEListViewController.swift; sourceTree = "<group>"; };
+		F980FF30255D26D700819B5D /* libHKBluetooth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHKBluetooth.a; sourceTree = "<group>"; };
+		F980FF31255D26D700819B5D /* HKBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKBluetooth.h; sourceTree = "<group>"; };
+		F980FF32255D26D700819B5D /* UserRecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecordItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F915102D23A722DB004399C8 /* libHKBluetooth.a in Frameworks */,
+				F980FF33255D26D700819B5D /* libHKBluetooth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,9 +139,9 @@
 		F9506455239F9010006BC6ED /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				F915102B23A722DB004399C8 /* HKBluetooth.h */,
-				F915102C23A722DB004399C8 /* libHKBluetooth.a */,
-				F915102A23A722DB004399C8 /* UserRecordItem.h */,
+				F980FF31255D26D700819B5D /* HKBluetooth.h */,
+				F980FF30255D26D700819B5D /* libHKBluetooth.a */,
+				F980FF32255D26D700819B5D /* UserRecordItem.h */,
 			);
 			path = SDK;
 			sourceTree = "<group>";

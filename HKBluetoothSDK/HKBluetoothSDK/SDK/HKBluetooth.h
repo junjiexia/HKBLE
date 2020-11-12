@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define FW_FILE_CODE_LENGTH_MIN        0
 #define FW_FILE_CODE_LENGTH_MAX        (50*1024)
 
-// 定时获取蓝牙信息（电量）的时间间隔（建议 60秒 以上）（默认60秒）
+// 定时获取卡片蓝牙信息（电量）的时间间隔（建议 60秒 以上）（默认60秒）
 #define BLE_TIMER_TIMEOUT   60
 
 /// OTA api result during transfering data
@@ -129,6 +129,9 @@ typedef enum : NSUInteger {
 - (void)bluetoothOfflineData: (NSArray *)cardArr;
 
 /// 基站数据获取（扫描时就可获取）
+/// dic["macAddress"]获取蓝牙Mac地址
+/// dic["power"]获取电池电量
+/// dic["RSSI"]获取蓝牙信号强度
 - (void)bluetoothBaseStationData: (NSDictionary *)dic;
 
 @end
