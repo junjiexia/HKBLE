@@ -329,10 +329,10 @@ extension BLEWorker: HKBluetoothDelegate {
     func bluetoothBaseStationData(_ dic: [AnyHashable : Any]) {
         print("基站数据：", dic)
         let macAddress = dic["macAddress"] as? String
-        let eq = dic["power"] as? String
+        let eq = dic["power"] as? Int
         let rssi = dic["RSSI"] as? Int
         let item = UserRecordItem()
-        item.mac = (macAddress ?? "") + "(基站) 电量:" + ((eq != nil) ? "\(eq!)%" : "") + " 信号强度" + "\(rssi ?? 0)"
+        item.mac = (macAddress ?? "") + "(基站) 电量:" + ((eq == nil || eq == -1) ? "" : "\(eq!)%") + " 信号强度" + "\(rssi ?? 0)"
         item.check_in = Date().timeIntervalSince1970 * 1000
         
         self.dataList.append(item)
